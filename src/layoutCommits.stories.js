@@ -3,7 +3,16 @@ import { drawCommits } from './drawCommits';
 
 const Meta = {
   title: 'Layout Commits',
-  decorators: [(story) => <pre>{drawCommits(story())}</pre>],
+  decorators: [
+    (story, { args: { example } }) => (
+      <div>
+        <p>Your solution:</p>
+        <pre>{drawCommits(story())}</pre>
+        <p>Example solution:</p>
+        <pre>{example}</pre>
+      </div>
+    ),
+  ],
 };
 export default Meta;
 
@@ -20,6 +29,7 @@ SingleCommit.args = {
       parents: [],
     },
   ],
+  example: 'cb5',
 };
 
 export const SingleBranch = Template.bind({});
@@ -60,6 +70,7 @@ SingleBranch.args = {
       commit: 'ea36cff4df4152ed98afb5bb7c9493e9f40fa10e',
     },
   ],
+  example: 'cb5 - 9a4 - 61d - ea3',
 };
 
 export const MultipleBranches = Template.bind({});
@@ -111,6 +122,7 @@ MultipleBranches.args = {
       commit: 'fc12a066a03d7fd83020ea675e524cff4536e661',
     },
   ],
+  example: `cb5 - 660 - fc1\n    - 9a4 - 61d`,
 };
 
 export const Merge = Template.bind({});
@@ -138,4 +150,5 @@ Merge.args = {
       commit: 'fc12a066a03d7fd83020ea675e524cff4536e661',
     },
   ],
+  example: `cb5 - 9a4 - 61d - 6c6\n    - 660 - fc1 -`,
 };
