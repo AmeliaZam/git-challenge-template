@@ -1,13 +1,11 @@
-import { layoutCommits } from './layoutCommits';
-import { drawCommits } from './drawCommits';
-
+import { GitViewer } from './GitViewer';
 const Meta = {
-  title: 'Layout Commits',
+  title: 'GitViewer',
   decorators: [
     (story, { args: { example } }) => (
       <div>
         <p>Your solution:</p>
-        <pre>{drawCommits(story())}</pre>
+        {story()}
         <p>Example solution:</p>
         <pre>{example}</pre>
       </div>
@@ -16,7 +14,7 @@ const Meta = {
 };
 export default Meta;
 
-const Template = ({ commits }) => layoutCommits(commits);
+const Template = ({ commits }) => <GitViewer commits={commits} />;
 
 export const SingleCommit = Template.bind({});
 SingleCommit.args = {
