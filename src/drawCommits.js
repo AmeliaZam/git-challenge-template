@@ -1,5 +1,4 @@
-// This is a simple function to draw a set of commits in plaintext, just for debugging purposes
-
+// This is a simple function to draw a set of commits in plaintext, just for example/debugging purposes
 export function drawCommits(commits) {
   const rows = Math.max(...Object.values(commits).map((c) => c.row));
   const columns = Math.max(...Object.values(commits).map((c) => c.column));
