@@ -124,7 +124,7 @@ MultipleBranches.args = {
       commit: 'fc12a066a03d7fd83020ea675e524cff4536e661',
     },
   ],
-  example: `cb5 - 660 - fc1\n    - 9a4 - 61d`,
+  example: `cb5 - 9a4 - 61d\n    - 660 - fc1`,
 };
 
 export const MergeCommit = Template.bind({});
