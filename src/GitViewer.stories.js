@@ -154,4 +154,3 @@ MergeCommit.args = {
   ],
   example: `cb5 - 9a4 - 61d - 6c6\n    - 660 - fc1 -`,
 };
-
